@@ -1167,6 +1167,7 @@ export default function App() {
         {route.type === 'gallery_list' && (
           <GalleryListPage
             posts={siteData.gallery.posts}
+            companyName={siteData.company.name}
             isEditMode={activeEditMode}
             onAddPost={addGalleryPost}
             onUpdatePost={updateGalleryPost}

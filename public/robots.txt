@@ -7,4 +7,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://ais-dev-okocsgrvxn2izx4isj6nx3-861287890543.asia-northeast1.run.app/sitemap.xml
+Sitemap: https://gooddayclean.kr/sitemap.xml

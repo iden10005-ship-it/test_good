@@ -22,6 +22,7 @@ import { resolveAssetUrl } from '@/src/utils/assetUrl';
 
 interface GalleryListPageProps {
   posts: GalleryPost[];
+  companyName?: string;
   isEditMode: boolean;
   onAddPost: (post: GalleryPost) => void;
   onUpdatePost: (post: GalleryPost) => void;
@@ -43,6 +44,7 @@ const CATEGORIES = [
 
 export const GalleryListPage: React.FC<GalleryListPageProps> = ({
   posts,
+  companyName = '굿데이클린',
   isEditMode,
   onAddPost,
   onUpdatePost,
@@ -119,10 +121,10 @@ export const GalleryListPage: React.FC<GalleryListPageProps> = ({
                 <span>Real Field Stories &amp; Work Logs</span>
               </span>
               <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3 leading-tight">
-                클리어웍스 현장 작업 갤러리
+                {companyName} 현장 작업 갤러리
               </h1>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-5">
-                아파트 외창부터 상가·빌딩 외벽까지, 실제 현장에서 직접 시공한 전후 결과와 클리어웍스만의 세척 노하우를 생생한 현장 일지로 만나보세요.
+                아파트 외창부터 상가·빌딩 외벽까지, 실제 현장에서 직접 시공한 전후 결과와 {companyName}만의 세척 노하우를 생생한 현장 일지로 만나보세요.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-300">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />

@@ -1,19 +1,19 @@
 {
   "adminPin": "1234",
   "company": {
-    "name": "클리어웍스",
+    "name": "굿데이클린",
     "region": "서울·수도권",
-    "phone": "010-0000-0000",
+    "phone": "010-2625-2450",
     "kakaoLink": "https://open.kakao.com",
-    "representative": "김도현",
-    "bizNumber": "000-00-00000",
-    "address": "서울특별시 강남구 테헤란로 152",
+    "representative": "이정남",
+    "bizNumber": "710-69-00609",
+    "address": "경기도 안양시 동안구 경수대로707번길 39",
     "operatingHours": "평일,주말 연중무휴",
     "asPeriod": "7"
   },
   "hero": {
-    "badgeText": "프리미엄 윈도우 케어",
-    "title": "서울·수도권 유리창청소 전문\n클리어웍스",
+    "badgeText": "프리미엄 클리닝서비스",
+    "title": "서울·수도권 유리창청소 전문\n굿데이클린",
     "subtitle": "아파트 외창부터 상가·빌딩 외벽까지, 얼룩 없이 깔끔하게. 견적은 무료입니다.",
     "callButtonText": "전화 상담하기",
     "kakaoButtonText": "카톡으로 문의하기",
@@ -25,12 +25,12 @@
     "stats": [
       {
         "id": "stat-1",
-        "value": "2,500건+",
+        "value": "2,300건+",
         "label": "누적 시공"
       },
       {
         "id": "stat-2",
-        "value": "8년+",
+        "value": "7년+",
         "label": "현장 경력"
       },
       {
@@ -250,7 +250,7 @@
   },
   "gallery": {
     "sectionTitle": "작업 갤러리 & 현장 일지",
-    "sectionSubtitle": "클리어웍스가 직접 다녀온 생생한 현장 스토리와 청소 노하우를 확인하세요.",
+    "sectionSubtitle": "굿데이클린이 직접 다녀온 생생한 현장 스토리와 청소 노하우를 확인하세요.",
     "posts": [
       {
         "id": "post-1",
@@ -468,7 +468,7 @@
   },
   "reviews": {
     "sectionTitle": "고객 후기",
-    "sectionSubtitle": "클리어웍스를 이용하신 실제 고객님들의 소중한 후기입니다.",
+    "sectionSubtitle": "굿데이클린을 이용하신 실제 고객님들의 소중한 후기입니다.",
     "items": [
       {
         "id": "rev-1",
@@ -525,7 +525,7 @@
       {
         "id": "faq-6",
         "question": "예약은 어떻게 하나요?",
-        "answer": "전화나 카톡으로 문의하시면 가능한 날짜를 안내해 드립니다. 성수기에는 일주일 전 예약을 권장합니다."
+        "answer": "전화나 카톡으로 문의하시면 가능한 날짜를 안내해 드립니다. 실제 방문일자는 고객과의 협의로 이뤄집니다."
       },
       {
         "id": "faq-7",
@@ -535,7 +535,7 @@
       {
         "id": "faq-8",
         "question": "작업 후 A/S가 되나요?",
-        "answer": "시공 후 점검에서 아쉬운 부분이 있으면 바로 재작업합니다. 7일 이내 문의해 주세요."
+        "answer": "시공 후 점검에서 아쉬운 부분이 있으면 바로 재작업합니다. "
       }
     ]
   },
@@ -953,5 +953,6 @@
     "sectionSubtitle": "남겨주시면 영업시간 내에 연락드립니다.",
     "successMessage": "신청이 접수되었습니다. 영업시간 내에 신속히 연락드리겠습니다."
   },
-  "updatedAt": "2026-11-14T12:27:30.000Z"
+  "updatedAt": "2026-11-15T10:55:40.000Z",
+  "siteUrl": "https://gooddayclean.kr"
 }
