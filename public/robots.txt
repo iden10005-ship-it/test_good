@@ -7,4 +7,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://gooddayclean.kr/sitemap.xml
+Sitemap: https://www.gooddayclean.kr/sitemap.xml

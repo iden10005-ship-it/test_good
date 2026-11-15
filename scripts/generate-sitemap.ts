@@ -29,7 +29,7 @@ async function main() {
       vercelProdUrl ||
       process.env.APP_URL ||
       vercelPreviewUrl ||
-      'https://www.clearworks.kr'
+      'https://www.gooddayclean.kr'
   );
 
   const includeMatrix = process.env.SITEMAP_INCLUDE_MATRIX !== 'false';

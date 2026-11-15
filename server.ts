@@ -319,7 +319,7 @@ async function writeSitemapFiles(
   includeMatrix = true
 ): Promise<number> {
   const baseUrl = normalizeBaseUrl(
-    overrideBaseUrl || data.siteUrl || process.env.APP_URL || 'https://www.clearworks.kr'
+    overrideBaseUrl || data.siteUrl || process.env.APP_URL || 'https://www.gooddayclean.kr'
   );
   const entries = buildSitemapEntries(data, { baseUrl, includeMatrix });
   const xml = generateSitemapXml(data, { baseUrl, includeMatrix });

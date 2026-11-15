@@ -110,12 +110,7 @@ function isAdminHash(): boolean {
   return hash === 'admin';
 }
 
-function parseHashRoute(): PageRoute {
-  if (typeof window === 'undefined') return { type: 'home' };
-  const hash = window.location.hash.replace(/^#\/?/, '');
-  if (!hash || hash.toLowerCase() === 'admin') return { type: 'home' };
-
-  const parts = hash.split('/').map((p) => decodeURIComponent(p));
+function parseRouteFromSegments(parts: string[]): PageRoute {
   if (parts[0] === 'service' && parts[1]) {
     return { type: 'service', serviceId: parts[1] };
   }
@@ -128,6 +123,22 @@ function parseHashRoute(): PageRoute {
   if (parts[0] === 'gallery') {
     if (parts[1]) return { type: 'gallery_detail', postId: parts[1] };
     return { type: 'gallery_list' };
+  }
+  return { type: 'home' };
+}
+
+function parseHashRoute(): PageRoute {
+  if (typeof window === 'undefined') return { type: 'home' };
+  const hash = window.location.hash.replace(/^#\/?/, '');
+  if (hash && hash.toLowerCase() !== 'admin') {
+    const hashParts = hash.split('/').filter(Boolean).map((p) => decodeURIComponent(p));
+    return parseRouteFromSegments(hashParts);
+  }
+
+  const pathname = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  if (pathname) {
+    const pathParts = pathname.split('/').filter(Boolean).map((p) => decodeURIComponent(p));
+    return parseRouteFromSegments(pathParts);
   }
   return { type: 'home' };
 }
@@ -462,14 +473,18 @@ export default function App() {
   }, [isAdminMode]);
 
   useEffect(() => {
-    const onHashChange = () => {
+    const onRouteChange = () => {
       if (isAdminHash() && !isAdminMode) {
         setLoginModalOpen(true);
       }
       setRoute(parseHashRoute());
     };
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    window.addEventListener('hashchange', onRouteChange);
+    window.addEventListener('popstate', onRouteChange);
+    return () => {
+      window.removeEventListener('hashchange', onRouteChange);
+      window.removeEventListener('popstate', onRouteChange);
+    };
   }, [isAdminMode]);
 
   useEffect(() => {
@@ -500,9 +515,9 @@ export default function App() {
     const nextHash = buildHashForRoute(next);
     if (typeof window !== 'undefined') {
       if (nextHash) {
-        window.history.pushState(null, '', nextHash);
+        window.history.pushState(null, '', `/${nextHash}`);
       } else {
-        window.history.pushState(null, '', window.location.pathname + window.location.search);
+        window.history.pushState(null, '', '/' + window.location.search);
       }
       window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     }

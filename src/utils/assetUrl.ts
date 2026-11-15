@@ -16,6 +16,13 @@ export function resolveAssetUrl(url?: string): string {
     return trimmed;
   }
   if (trimmed.startsWith('/')) {
+    const baseUrl =
+      typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL
+        ? import.meta.env.BASE_URL
+        : '/';
+    if (baseUrl === '/') {
+      return trimmed;
+    }
     if (typeof document !== 'undefined' && document.baseURI) {
       try {
         return new URL(trimmed.slice(1), document.baseURI).pathname;

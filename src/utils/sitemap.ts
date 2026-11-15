@@ -22,7 +22,7 @@ export interface SitemapOptions {
   includeMatrix?: boolean;
 }
 
-const DEFAULT_BASE_URL = 'https://www.clearworks.kr';
+const DEFAULT_BASE_URL = 'https://www.gooddayclean.kr';
 
 export function normalizeBaseUrl(rawUrl?: string): string {
   const candidate = (rawUrl ?? '').trim();
@@ -76,7 +76,7 @@ export function buildSitemapEntries(
 
   // 2. Gallery list page
   pushEntry({
-    loc: `${baseUrl}/#/gallery`,
+    loc: `${baseUrl}/gallery`,
     lastmod: defaultLastmod,
     changefreq: 'weekly',
     priority: '0.8',
@@ -85,7 +85,7 @@ export function buildSitemapEntries(
   // 3. Individual service detail pages
   for (const service of siteData.services.items) {
     pushEntry({
-      loc: `${baseUrl}/#/service/${encodeURIComponent(service.id)}`,
+      loc: `${baseUrl}/service/${encodeURIComponent(service.id)}`,
       lastmod: defaultLastmod,
       changefreq: 'monthly',
       priority: '0.9',
@@ -95,7 +95,7 @@ export function buildSitemapEntries(
   // 4. Individual gallery field log pages
   for (const post of siteData.gallery.posts) {
     pushEntry({
-      loc: `${baseUrl}/#/gallery/${encodeURIComponent(post.id)}`,
+      loc: `${baseUrl}/gallery/${encodeURIComponent(post.id)}`,
       lastmod: formatPostLastmod(post.date, defaultLastmod),
       changefreq: 'monthly',
       priority: '0.8',
@@ -105,7 +105,7 @@ export function buildSitemapEntries(
   // 5. Regional SEO landing pages
   for (const region of siteData.regions.list) {
     pushEntry({
-      loc: `${baseUrl}/#/region/${encodeURIComponent(region)}`,
+      loc: `${baseUrl}/region/${encodeURIComponent(region)}`,
       lastmod: defaultLastmod,
       changefreq: 'monthly',
       priority: '0.7',
@@ -117,7 +117,7 @@ export function buildSitemapEntries(
     for (const region of siteData.regions.list) {
       for (const service of siteData.services.items) {
         pushEntry({
-          loc: `${baseUrl}/#/region/${encodeURIComponent(region)}/service/${encodeURIComponent(service.id)}`,
+          loc: `${baseUrl}/region/${encodeURIComponent(region)}/service/${encodeURIComponent(service.id)}`,
           lastmod: defaultLastmod,
           changefreq: 'monthly',
           priority: '0.6',
