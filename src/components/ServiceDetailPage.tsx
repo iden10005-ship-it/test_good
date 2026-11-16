@@ -257,11 +257,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             </div>
             <ul className="space-y-3">
               {detail.scopeList.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                  <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                    ✓
-                  </span>
-                  <span className="leading-relaxed flex-1">
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50/80 hover:bg-emerald-50/30 border border-slate-100/90 hover:border-emerald-200 transition-all text-xs sm:text-sm text-slate-800 shadow-2xs"
+                >
+                  <div className="w-6 h-6 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="leading-relaxed flex-1 font-semibold">
                     <EditableText
                       value={item}
                       onSave={(v) => {
@@ -315,11 +318,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               </div>
               <ul className="space-y-3">
                 {detail.equipment.map((eq, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                    <span className="w-5 h-5 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
-                      •
-                    </span>
-                    <span className="leading-relaxed flex-1">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50/80 hover:bg-blue-50/30 border border-slate-100/90 hover:border-blue-200 transition-all text-xs sm:text-sm text-slate-800 shadow-2xs"
+                  >
+                    <div className="w-6 h-6 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                      <Wrench className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="leading-relaxed flex-1 font-semibold">
                       <EditableText
                         value={eq}
                         onSave={(v) => {

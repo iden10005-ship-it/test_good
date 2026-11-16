@@ -81,7 +81,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                 setPin(e.target.value);
                 setError('');
               }}
-              placeholder="비밀번호 입력 (초기값: 1234)"
+              placeholder="비밀번호 입력"
               className="w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
             />
           </div>
@@ -95,8 +95,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
           <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-2 text-[11px] text-slate-600">
             <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
             <span>
-              방문자 모드에서는 어떠한 편집 버튼이나 수정 기능도 노출되지 않습니다. 초기 비밀번호는{' '}
-              <strong className="font-mono text-slate-900">1234</strong>이며 로그인 후 변경할 수 있습니다.
+              방문자 모드에서는 어떠한 편집 버튼이나 수정 기능도 노출되지 않습니다. 관리자 비밀번호를 입력해 주세요.
             </span>
           </div>
 

@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({
             </button>
             <button
               type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'auto' })}
               className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors flex items-center gap-1 text-xs cursor-pointer"
               title="맨 위로"
             >

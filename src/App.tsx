@@ -527,10 +527,10 @@ export default function App() {
     if (route.type !== 'home') {
       navigateTo({ type: 'home' });
       setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'auto' });
       }, 60);
     } else {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'auto' });
     }
   };
 
